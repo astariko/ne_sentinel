@@ -152,3 +152,39 @@ body {
 
 
 }
+
+.box {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid black;
+  min-height: 40px;
+  background-color: #d1d1e0;
+  color: #202090;
+}
+
+#p1{
+/*  margin: 0px;*/
+  padding-top: 10px;
+  padding-left: 20px;
+  border: 1px solid black;
+  background-color: #d1d1e0;
+}
+
+.ne-status{
+  margin-right: 20px;
+}
+
+.ne-prop{
+  margin-right: 20px;
+}
+
+.ne-check{
+  float: right;
+}
+
+.box-header{
+  padding-left: 7px;
+}
