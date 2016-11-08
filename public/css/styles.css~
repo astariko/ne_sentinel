@@ -152,6 +152,11 @@ body {
 
 
 }
+.box-header{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
 
 .box {
   padding-left: 10px;
@@ -182,9 +187,6 @@ body {
 }
 
 .ne-check{
-  float: right;
+  float: left;
 }
 
-.box-header{
-  padding-left: 7px;
-}
