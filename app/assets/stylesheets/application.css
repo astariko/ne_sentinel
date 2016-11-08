@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ *= require main
+ *= require_self
+ *= require_tree .
+ 
+ @import main
