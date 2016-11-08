@@ -1,0 +1,155 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    font-size: 16px;
+    color: #fff;
+    background-color: #e6e6ff;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/** ************************************************************************************* **/
+/**                                 HEADER                                                **/
+#header-nav {
+    background-color: #ffffff;
+    border-radius: 0;
+    border: 0;
+}
+
+#logo-img {
+    background: url('../images/nokia-logo1.jpg') no-repeat;
+    background-size:contain;
+    width: 283px;
+    height: 150px;
+    margin: 0px 0px 0px 0;
+    float: left;
+}
+
+.container {
+    float: left;
+    width: 100%;
+}
+
+.navbar-brand {
+    padding-top: 25px;
+}
+
+.navbar-brand h1 {
+    font-family: 'Lora', serif;
+    color: #202090;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-left: 70px;
+    margin-bottom: 0;
+    line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+    text-decoration: none;
+}
+
+#nav-list {
+    margin-top: 10px;
+
+}
+#nav-list a {
+    color: #202090;
+    text-align: center;
+}
+#nav-list a:hover {
+    background: #E7E7E7;
+}
+#nav-list a span {
+    font-size: 1.8em;
+}
+
+.btn-primary {
+    background-color: #202090;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+    border: 1px solid #61122f;
+}
+.navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -30px;
+}
+/* END HEADER */
+
+/** ************************************************************************************* **/
+/**                                   BODY                                                **/
+#left-pane {
+    margin-bottom: 20px;
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Header */
+    #logo-img {
+        background: url('../images/nokia-logo1.jpg') no-repeat;
+        background-size:contain;
+        width: 212px;
+        height: 112px;
+        margin:  0;
+    }
+
+    #left-pane {
+        height: 500px;
+    }
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+.label-radio{
+    margin-bottom: 0px;
+}
+.subcontainer {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    overflow: hidden;
+    border: 1px solid black;
+    min-height: 150px;
+    background-color: #d1d1e0;
+    color: #202090;
+}
+
+#load-pick{
+    background-color: #e6e6ff;
+}
+
+.ne-status{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.ne-prop{
+    /*margin-right: 10px;*/
+}
+
+.ne-check{
+    /* float: left; */
+}
+
+.load-check{
+    padding-top: 30px;
+}
