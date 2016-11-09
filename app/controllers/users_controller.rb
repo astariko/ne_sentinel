@@ -1,4 +1,6 @@
-class SwloadController < ApplicationController
+class UsersController < ApplicationController
+  # You need this.
+  before_action :set_user
 	# =================================================================
   def index
 	# =================================================================
@@ -9,14 +11,9 @@ class SwloadController < ApplicationController
 		#getVersion ('BACKBONE')
 		# Create a system that has all NEs.
 
-		ne1 = {:name => 'SAN-5a', :ip => '135.121.44.33', :ectype => 'ARMADA', :version => '17.14-20'}
-		ne2 = {:name => 'SAN-6', :ip => '135.121.44.34', :ectype => 'ECX', :version => '17.10-20'}
-		ne3 = {:name => 'SAN-7', :ip => '135.121.44.27', :ectype => 'PSS4', :version => '17.12-20'}
-		ne4 = {:name => 'SAN-10',:ip => '135.121.44.252', :ectype => 'PSS4', :version => '17.14-40'}
-		@nes = [ne1, ne2, ne3, ne4]
-		
+		@nes = @user.nes
 		for ne in @nes
-			ne[:isOnline] = isOnline ne[:ip]
+			ne[:isonline] = isOnline ne[:ip]
 		end
 
 		#render layout: "header.erb"
@@ -99,5 +96,17 @@ class SwloadController < ApplicationController
 
     @latest_load = res
   end
+
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.first
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    #def todo_list_params
+    #  params.require(:todo_list).permit(:list_name, :list_due_date)
+    #end
 
 end

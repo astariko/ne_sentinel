@@ -1,12 +1,35 @@
     <div id= "left-pane" class="col-lg-2 col-md-2">
       <div>
-        <%= button_to "Add", "/nes/new", method: :get %>
-        <button id="button-add" type="button" class="btn btn-primary btn-block"> Add </button>
-        <button id="button-edit" type="button" class="btn btn-primary btn-block"> Edit </button>
+        <form class="button_to" method="get" action="/nes/new">
+            <input class="btn btn-primary btn-block" type="submit" value="Add" />
+        </form>
+
+        <form class="button_to" method="get" action="/nes/edit">
+            <input class="btn btn-primary btn-block" type="submit" value="Edit" />
+        </form>
+
+        <form class="button_to" method="get" action="/nes/delete">
+            <input class="btn btn-primary btn-block" type="submit" value="Delete" />
+        </form>
+
+        <form>
         <button id="button-delete" type="button" class="btn btn-primary btn-block"> Delete </button>
+        </form>
+
+        <form>
         <button id="button-upgrade" type="button" class="btn btn-primary btn-block"> Upgrade </button>
+        </form>
+
+        <form>
         <button id="button-launch" type="button" class="btn btn-primary btn-block"> Launch </button>
+        </form>
+
+        <form>
         <button id="button-edit-profiles" type="button" class="btn btn-primary btn-block"> Edit Profiles </button>
+        </form>
+
+        <form>
         <button id="button-edit-profiles" type="button" class="btn btn-primary btn-block"> Edit Systems </button>
+        </form>
       </div>
     </div>

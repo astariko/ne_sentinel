@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  username: MyString
+  password: MyString
+  state: MyString
+  privilege: MyString
+
+two:
+  make: MyString
+  username: MyString
+  password: MyString
+  state: MyString
+  privilege: MyString

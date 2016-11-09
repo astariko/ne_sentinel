@@ -1,11 +1,20 @@
 class NesController < ApplicationController
+  before_action :set_user
+  before_action :set_ne  #, only: [:show, :edit, :update, :destroy]
 	# =================================================================
   def index
 	# =================================================================
-
+	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
+	
+	for ne in @nes
+		ne[:isonline] = isOnline ne[:ip]
+	end
   end
 
+  # GET /nes/new
   def new
+  	#@todo_list = current_user.todo_lists.ne
+  	#@ne = nes.new
   end
 
   def create
@@ -40,5 +49,21 @@ class NesController < ApplicationController
 		end
 		return false
 	end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.first
+    end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_ne
+      if params.include? :id
+        @ne = @user.nes.find(params[:id])
+      end
+    end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    #def todo_list_params
+    #  params.require(:todo_list).permit(:list_name, :list_due_date)
+    #end
 
 end

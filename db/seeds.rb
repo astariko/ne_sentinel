@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Ne.destroy_all
+User.destroy_all
+
+users = User.create! [
+  { username: "artem", password: "qweQWE123!@#{}", state: "active", privilege: "admin" },
+  { username: "userA", password: "qweQWE123!@#{}", state: "active", privilege: "user" }
+]
+
+User.first.nes.create! [
+	{name: 'SAN-5', ip: '135.121.44.33', ectype: 'ARMADA', version:'17.14-20'},
+	{name: 'SAN-6', ip: '135.121.44.34', ectype: 'ECX', version: '17.10-20'},
+	{name: 'SAN-7', ip: '135.121.44.27', ectype: 'PSS4', version: '17.12-20'},
+	{name: 'SAN-10',ip: '135.121.44.252', ectype: 'PSS4', version: '17.14-40'}
+]
+
+Ne.all.each do |ne|
+  ne.user = users.first
+  ne.save!
+end
