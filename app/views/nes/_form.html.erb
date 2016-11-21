@@ -1,4 +1,4 @@
-<%= form_for(@ne) do |f| %>
+<%= form_for([@user, @ne]) do |f| %>
   <% if @ne.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ne.errors.count, "error") %> prohibited this NE from being saved:</h2>
@@ -12,14 +12,22 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
     <%= f.label :ip %><br>
     <%= f.text_field :ip %>
   </div>
   <div class="field">
     <%= f.label :ectype %><br>
-    <%= f.text_field :ectype %>
+
+    <%= f.select(:ectype, options_for_select(['EC', 'ECX', 'ARMADA', 'PSS4', 'ECE']) ) %>
   </div>
+  <br>
+
   <div class="actions">
-    <%= f.submit %>
+    <input class="btn btn-primary btn-block" type="submit" value="Submit" />
   </div>
+  <br>
 <% end %>

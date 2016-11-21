@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
 
-  resources :nes, only: [:new, :create, :destroy]
+  resources :users do
+    resources :nes#, only: [:new, :create, :destroy]
+  end
 
-
+  #resources :sessions, only: [:new, :create, :destroy]
+  #get "/login" => "sessions#new", as: "login"
+  #delete "/logout" => "sessions#destroy", as: "logout"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

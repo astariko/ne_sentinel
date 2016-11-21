@@ -1,19 +1,19 @@
     <div id= "left-pane" class="col-lg-2 col-md-2">
       <div>
-        <form class="button_to" method="get" action="/nes/new">
+
+        <form class="button_to" method="get" action="/">
+            <input class="btn btn-primary btn-block" type="submit" value="Home" />
+        </form>
+
+        <form class="button_to" method="get" action= <%= new_user_ne_path(@user) %> >
             <input class="btn btn-primary btn-block" type="submit" value="Add" />
         </form>
 
-        <form class="button_to" method="get" action="/nes/edit">
-            <input class="btn btn-primary btn-block" type="submit" value="Edit" />
-        </form>
+        <%= submit_tag "Edit", :type => 'button', :class => "btn btn-primary btn-block", :id => 'edit-button'  %>
 
-        <form class="button_to" method="get" action="/nes/delete">
-            <input class="btn btn-primary btn-block" type="submit" value="Delete" />
-        </form>
 
-        <form>
-        <button id="button-delete" type="button" class="btn btn-primary btn-block"> Delete </button>
+        <form class="button_to" method="delete" action="">
+            <%= submit_tag "Delete", :type => 'button', :class => "btn btn-primary btn-block", :id => 'delete-button'  %>
         </form>
 
         <form>
@@ -33,3 +33,5 @@
         </form>
       </div>
     </div>
+
+

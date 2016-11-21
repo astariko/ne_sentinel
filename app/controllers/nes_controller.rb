@@ -13,13 +13,42 @@ class NesController < ApplicationController
 
   # GET /nes/new
   def new
-  	#@todo_list = current_user.todo_lists.ne
-  	#@ne = nes.new
+  	@ne = @user.nes.new
   end
-
+  # POST /nes
   def create
+    @ne = @user.nes.new(ne_params)
+
+    respond_to do |format|
+      if @ne.save
+        format.html { redirect_to root_path, notice: 'NE item was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
 
+  # GET /nes/edit
+  def edit
+  end
+  # PATCH/PUT /nes/1
+  def update
+    respond_to do |format|
+      if @ne.update(ne_params)
+        format.html { redirect_to root_path, notice: 'NE item was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  # DELETE /nes/1
+  def destroy
+    @ne.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'NE item was successfully destroyed.' } # todo_items_url
+    end
+  end
 	# =================================================================
 	def getVersion (system)
 	# =================================================================
@@ -62,8 +91,7 @@ class NesController < ApplicationController
       end
     end
     # Never trust parameters from the scary internet, only allow the white list through.
-    #def todo_list_params
-    #  params.require(:todo_list).permit(:list_name, :list_due_date)
-    #end
-
+    def ne_params
+      params.require(:ne).permit(:name, :ip, :ectype)
+    end
 end

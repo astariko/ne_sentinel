@@ -42,20 +42,28 @@
         </div>
 
       <% for ne in @nes %>
+        <div class="col-lg-5 col-md-5 col-sm-5" contextmenu="mymenu">
 
-      <!--<div class="col-lg-12 col-md-12">-->
-      <div class="col-lg-5 col-md-5 col-sm-5">
-        <span> <input class="ne-check" type="checkbox" /> </span>
-        <span> <%= ne_status ne %> </span>
-        <span class="ne-prop"><%= ne[:name] %> </span>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-3">
-        <span class="ne-prop"><%= ne[:version] %> </span>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4">
-        <span class="ne-prop"><%= ne[:ectype] %></span>
-      </div>
+          <span> <input class="ne-check" type="checkbox" value=<%= ne[:id] %> > </span>
+          <span> <%= ne_status ne %> </span>
+          <span class="ne-prop"><%= ne[:name] %> </span>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <span class="ne-prop"><%= ne[:version] %> </span>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <span class="ne-prop"><%= ne[:ectype] %></span>
+        </div>
+        <div>
 
+
+
+        <%= button_to "delete", user_ne_path(@user, ne), :method => :delete,
+          :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
+
+        <%= button_to "edit", edit_user_ne_path(@user, ne), :method => :get, 
+          :form => {"style" => "display:none", "id" => "edit-"+ne[:id].to_s}, :data => ne[:id] %>
+        </div>
       <% end %>
     </div> <!-- NE list -->
 
