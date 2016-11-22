@@ -67,11 +67,10 @@ class NesController < ApplicationController
 	def upgrade
 		notice = 'Upgrade request issued successfully'
 
-		notice = 'Upgrade request issued successfully' + @user['rootec'] + @ne['system']
 
-		#command =  "apt runstart ot_encrypt_upgrade_Testcase.py --system " + @ne['system'] + " --une " + @ne['name'] + " --uroot " + @ne['rootecx'] + " --uload " + @ne['uload']
+		command =  "apt runstart ot_encrypt_upgrade_Testcase.py --system " + @ne['system'] + " --une " + @ne['name'] + " --uroot " + @user['rootecx'] + " --uload " + @user['uload'].to_s
 		respond_to do |format|
-			format.html { redirect_to root_path, notice: notice }
+			format.html { redirect_to root_path, notice: command }
 		end
 	end
 
