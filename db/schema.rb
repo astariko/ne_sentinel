@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109042239) do
+ActiveRecord::Schema.define(version: 20161122025523) do
 
   create_table "nes", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161109042239) do
     t.text     "ectype"
     t.integer  "user_id"
     t.boolean  "isonline"
+    t.text     "system"
   end
 
   add_index "nes", ["user_id"], name: "index_nes_on_user_id"
@@ -31,8 +32,14 @@ ActiveRecord::Schema.define(version: 20161109042239) do
     t.string   "password"
     t.string   "state"
     t.string   "privilege"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "loadselection"
+    t.text     "rootec"
+    t.text     "rootecx"
+    t.text     "rootece"
+    t.text     "rootarmada"
+    t.text     "rootpss4"
   end
 
 end

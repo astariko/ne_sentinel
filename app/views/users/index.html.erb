@@ -54,15 +54,16 @@
         <div class="col-lg-4 col-md-4 col-sm-4">
           <span class="ne-prop"><%= ne[:ectype] %></span>
         </div>
+
         <div>
-
-
-
         <%= button_to "delete", user_ne_path(@user, ne), :method => :delete,
           :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
 
         <%= button_to "edit", edit_user_ne_path(@user, ne), :method => :get, 
           :form => {"style" => "display:none", "id" => "edit-"+ne[:id].to_s}, :data => ne[:id] %>
+
+        <%= button_to "upgrade", user_ne_upgrade_path(@user, ne), :method => :post, 
+          :form => {"style" => "display:none", "id" => "upgrade-"+ne[:id].to_s}, :data => ne[:id] %>
         </div>
       <% end %>
     </div> <!-- NE list -->

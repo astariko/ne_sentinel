@@ -20,6 +20,10 @@
     <%= f.text_field :ip %>
   </div>
   <div class="field">
+    <%= f.label :system %><br>
+    <%= f.text_field :system %>
+  </div>
+  <div class="field">
     <%= f.label :ectype %><br>
 
     <%= f.select(:ectype, options_for_select(['EC', 'ECX', 'ARMADA', 'PSS4', 'ECE']) ) %>

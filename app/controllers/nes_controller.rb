@@ -64,6 +64,16 @@ class NesController < ApplicationController
 			
 	end
 
+	def upgrade
+		notice = 'Upgrade request issued successfully'
+
+		notice = 'Upgrade request issued successfully' + @user['rootec'] + @ne['system']
+
+		#command =  "apt runstart ot_encrypt_upgrade_Testcase.py --system " + @ne['system'] + " --une " + @ne['name'] + " --uroot " + @ne['rootecx'] + " --uload " + @ne['uload']
+		respond_to do |format|
+			format.html { redirect_to root_path, notice: notice }
+		end
+	end
 
 	# =================================================================
 	def isOnline (ip)
@@ -86,12 +96,15 @@ class NesController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_ne
+      if params.include? :ne_id
+        @ne = @user.nes.find(params[:ne_id])
+      end
       if params.include? :id
-        @ne = @user.nes.find(params[:id])
+      	@ne = @user.nes.find(params[:id])
       end
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def ne_params
-      params.require(:ne).permit(:name, :ip, :ectype)
+      params.require(:ne).permit(:name, :ip, :ectype, :system)
     end
 end

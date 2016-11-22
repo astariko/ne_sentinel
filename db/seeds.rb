@@ -7,10 +7,10 @@ users = User.create! [
 ]
 
 User.first.nes.create! [
-	{name: 'SAN-5', ip: '135.121.44.33', ectype: 'ARMADA', version:'17.14-20'},
-	{name: 'SAN-6', ip: '135.121.44.34', ectype: 'ECX', version: '17.10-20'},
-	{name: 'SAN-7', ip: '135.121.44.27', ectype: 'PSS4', version: '17.12-20'},
-	{name: 'SAN-10',ip: '135.121.44.252', ectype: 'PSS4', version: '17.14-40'}
+	{name: 'SAN-5', ip: '135.121.44.33', ectype: 'ARMADA', version:'17.14-20', system:'BACKBONE'},
+	{name: 'SAN-6', ip: '135.121.44.34', ectype: 'ECX', version: '17.10-20', system:'BACKBONE'},
+	{name: 'SAN-7', ip: '135.121.44.27', ectype: 'PSS4', version: '17.12-20', system:'SLIM'},
+	{name: 'SAN-10',ip: '135.121.44.252', ectype: 'PSS4', version: '17.14-40', system:'SLIM'}
 ]
 
 Ne.all.each do |ne|

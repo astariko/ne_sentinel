@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-    resources :nes#, only: [:new, :create, :destroy]
+    resources :nes do#, only: [:new, :create, :destroy]
+      post 'upgrade'
+    end
   end
 
   #resources :sessions, only: [:new, :create, :destroy]

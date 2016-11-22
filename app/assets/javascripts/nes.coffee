@@ -47,10 +47,30 @@ document.addEventListener("DOMContentLoaded",
 				window.alert("Please, select exactly one NE before clicking delete")
 			else
 				try
-					link = document.getElementById("delete-" + id.toString())
-					link.click()
+					form = document.getElementById("delete-" + id.toString())
+					form[0].form[1].click()
 				catch error
 					window.alert("Form for ID delete-#{id} not found, " + error)
 
 		document.getElementById("delete-button").addEventListener("click", deleteNe)
+
+		upgradeNe = () ->
+			checks = document.getElementsByClassName("ne-check")
+			count = 0
+			id = ""
+			for check in checks
+				if check.checked
+					count += 1
+					id = check.value
+			if count != 1
+				window.alert("Please, select exactly one NE before clicking upgrade")
+			else
+				try
+					form = document.getElementById("upgrade-" + id.toString())
+					form[0].click()
+				catch error
+					window.alert("Form for ID upgrade-#{id} not found, " + error)
+
+		document.getElementById("upgrade-button").addEventListener("click", upgradeNe)
 	)
+

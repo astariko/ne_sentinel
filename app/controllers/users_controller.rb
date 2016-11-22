@@ -20,6 +20,19 @@ class UsersController < ApplicationController
 		
   end
 
+  # GET /user/edit
+  def edit
+  end
+  # PATCH/PUT /user/1
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to root_path, notice: 'User Profile was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end  
 	# =================================================================
 	def getVersion (system)
 	# =================================================================
@@ -103,7 +116,10 @@ class UsersController < ApplicationController
     def set_user
       @user = User.first
     end
-
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:rootec, :rootecx, :rootece, :rootarmada, :rootpss4)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     #def todo_list_params
     #  params.require(:todo_list).permit(:list_name, :list_due_date)
