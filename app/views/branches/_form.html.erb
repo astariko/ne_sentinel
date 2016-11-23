@@ -1,0 +1,37 @@
+<%= form_for([@user, @branch]) do |f| %>
+  <% if @branch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@branch.errors.count, "error") %> prohibited this branch from being saved:</h2>
+
+      <ul>
+      <% @branch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :root %><br>
+    <%= f.text_field :root %>
+  </div>
+  <div class="field">
+    <%= f.label :http %><br>
+    <%= f.text_field :http %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

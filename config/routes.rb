@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :nes do#, only: [:new, :create, :destroy]
       post 'upgrade'
     end
+    resources :branches
   end
 
   #resources :sessions, only: [:new, :create, :destroy]

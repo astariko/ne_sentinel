@@ -26,12 +26,19 @@
         <button id="button-launch" type="button" class="btn btn-primary btn-block"> Launch </button>
         </form>
 
-        <form>
-        <button id="button-edit-profiles" type="button" class="btn btn-primary btn-block"> Edit Roots </button>
-        </form>
 
         <form class="button_to" method="get" action=<%= edit_user_path(@user) %>>
             <%= submit_tag "Edit roots", :type => 'submit', :class => "btn btn-primary btn-block", :id => 'button-edit-profiles'  %>
+        </form>
+        <!-- Edit User button -->
+        <!--
+        <form class="button_to" method="get" action=<%= edit_user_path(@user) %>>
+            <%= submit_tag "Edit roots", :type => 'submit', :class => "btn btn-primary btn-block", :id => 'button-edit-profiles'  %>
+        </form>
+        -->
+
+        <form class="button_to" method="get" action= <%= new_user_branch_path(@user) %> >
+            <input class="btn btn-primary btn-block" type="submit" value="Edit Swloads" />
         </form>
 
         <form>

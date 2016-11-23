@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122025523) do
+ActiveRecord::Schema.define(version: 20161123024700) do
+
+  create_table "branches", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "completed"
+    t.string   "root"
+    t.string   "http"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "branches", ["user_id"], name: "index_branches_on_user_id"
 
   create_table "nes", force: :cascade do |t|
     t.string   "name"
@@ -32,14 +44,8 @@ ActiveRecord::Schema.define(version: 20161122025523) do
     t.string   "password"
     t.string   "state"
     t.string   "privilege"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.text     "loadselection"
-    t.text     "rootec"
-    t.text     "rootecx"
-    t.text     "rootece"
-    t.text     "rootarmada"
-    t.text     "rootpss4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

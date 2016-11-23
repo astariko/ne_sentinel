@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     #findLatestLoad
 		#getVersion ('BACKBONE')
 		# Create a system that has all NEs.
-
 		@nes = @user.nes
 		for ne in @nes
 			ne[:isonline] = isOnline ne[:ip]
