@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :nes do#, only: [:new, :create, :destroy]
       post 'upgrade'
+      get 'delete'
     end
     resources :branches
   end

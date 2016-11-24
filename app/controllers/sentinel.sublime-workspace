@@ -1,0 +1,769 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"fi",
+				"first_name"
+			],
+			[
+				"todo_",
+				"todo_lists"
+			],
+			[
+				"todo",
+				"todo_lists"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"tod",
+				"todo_items"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"Tod",
+				"TodoList"
+			],
+			[
+				"to",
+				"todo_items"
+			],
+			[
+				"update",
+				"update_password"
+			],
+			[
+				"some",
+				"some_obj"
+			],
+			[
+				"method",
+				"method_missing"
+			],
+			[
+				"key",
+				"key_value"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "users_controller.rb",
+			"settings":
+			{
+				"buffer_size": 3530,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/db/seeds.rb",
+			"settings":
+			{
+				"buffer_size": 892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "nes_controller.rb",
+			"settings":
+			{
+				"buffer_size": 3174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/Gemfile",
+			"settings":
+			{
+				"buffer_size": 1694,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "branches_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1966,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/app/assets/javascripts/nes.coffee",
+			"settings":
+			{
+				"buffer_size": 2379,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/app/views/users/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 4453,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 1966,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Temk/Code/ne_sentinel/app/views/_leftpane.erb",
+			"settings":
+			{
+				"buffer_size": 1728,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Temk/Code/ne_sentinel",
+		"/C/Users/Temk/Code/ne_sentinel/app",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/javascripts",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/stylesheets",
+		"/C/Users/Temk/Code/ne_sentinel/app/controllers",
+		"/C/Users/Temk/Code/ne_sentinel/app/views",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/branches",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/layouts",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/nes",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/users",
+		"/C/Users/Temk/Code/ne_sentinel/config",
+		"/C/Users/Temk/Code/ne_sentinel/config/environments",
+		"/C/Users/Temk/Code/ne_sentinel/db",
+		"/C/Users/Temk/Code/ne_sentinel/db/migrate",
+		"/C/Users/Temk/Code/ne_sentinel/log",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/assets",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/controllers",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/models",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/layouts",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_lists",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/config",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/db"
+	],
+	"file_history":
+	[
+		"/C/Users/Temk/Code/ne_sentinel/app/views/users/_form.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/nes/_form.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/branches/_form.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/branches/new.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/config/routes.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/models/user.rb",
+		"/C/Users/Temk/Code/ne_sentinel/db/seeds.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/nes/show.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/nes/edit.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/javascripts/application.js",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/stylesheets/application.css",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/nes/new.html.erb",
+		"/C/Users/Temk/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Temk/AppData/Roaming/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/C/Users/Temk/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Temk/Code/ne_sentinel/db/migrate/20161109041330_add_isonline_to_nes.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/controllers/todo_lists_controller.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/layouts/application.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/stylesheets/application.scss",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/_leftpane.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/controllers/users_controller.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/models/ne.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/index.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/db/migrate/20161109030248_remove_field_name_from_table_name.rb",
+		"/C/Users/Temk/Code/ne_sentinel/db/schema.rb",
+		"/C/Users/Temk/Code/ne_sentinel/db/development.sqlite3",
+		"/C/Users/Temk/Code/ne_sentinel/app/controllers/swload_controller.rb",
+		"/C/Users/Temk/Code/ne_sentinel/config/initializers/assets.rb",
+		"/C/Users/Temk/Code/ne_sentinel/Gemfile.lock",
+		"/C/Users/Temk/Code/ne_sentinel/Gemfile",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/_header.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/ne/new.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/stylesheets/nes.scss",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/ne/add.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/models/todo_list.rb",
+		"/C/Users/Temk/Code/ne_sentinel/app/controllers/swloads_controller.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_lists/index.html.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/_header.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/_footer.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/_leftpane.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/header.erb",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/header.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/db/seeds.rb",
+		"/C/Users/Temk/Code/ne_sentinel/public/css/styles.css",
+		"/C/Users/Temk/Code/ne_sentinel/js/script.js",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/controllers/todo_items_controller.rb",
+		"/C/Users/Temk/Code/ne_sentinel/public/css/styles.css~",
+		"/C/Users/Temk/Code/ne_sentinel/app/assets/stylesheets/swload.scss",
+		"/C/Users/Temk/Code/ne_sentinel/app/views/swload/index.html",
+		"/C/Users/Temk/Code/ne_sentinel/css/styles.css",
+		"/C/Users/Temk/Code/ne_sentinel/index.html",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module3-solution/css/styles.css",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module3-solution/index.html",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/Gemfile",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/config/application.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/app/models/racer.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/app/controllers/racers_controller.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/app/views/racers/index.html.erb",
+		"/C/Users/Temk/Code/4 MongoDB/module1/app/models/zip.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/race_results.json",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/config/routes.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/app/helpers/racers_helper.rb",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/app/views/racers/index.json.jbuilder",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/raceday/config/mongoid.yml",
+		"/C/Users/Temk/Code/4 MongoDB/module1_zips/Gemfile",
+		"/C/Users/Temk/Code/4 MongoDB/module1_zips/config/mongoid.yml",
+		"/C/Users/Temk/Code/4 MongoDB/module1/config/mongoid.yml",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/Lesson01-MongoDB-Connection/student-start/assignment.rb",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module4-solution/js/script.js",
+		"/C/Users/Temk/Code/4 MongoDB/module1-ass-lessons/Assignments/Lesson01-MongoDB-Connection/solution/assignment.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/.rspec",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_lists/show.html.erb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/fullstack-course2-module4-i-reviewed-master/app/views/books/index.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/config/routes.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/sessions/new.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/controllers/application_controller.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/controllers/sessions_controller.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/layouts/application.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items/show.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items/edit.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items/_form.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items/new.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/models/user.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/fullstack-course2-module4-i-reviewed-master/config/routes.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/fullstack-course2-module4-i-reviewed-master/app/views/books/_form.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/views/todo_items/index.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/app/models/todo_item.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module04/todolists/Gemfile",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/fullstack-course2-module4-i-reviewed-master/app/views/layouts/application.html.erb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/app/views/books/index.html.erb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/config/routes.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/app/controllers/notes_controller.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/fullstack-course2-module4-i-reviewed-master/app/controllers/notes_controller.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/app/views/layouts/application.html.erb",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture39/after/index.html",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture39/after/css/styles.css",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/app/models/reviewer.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/db/seeds.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/app/models/book.rb",
+		"/C/Users/Temk/Code/2 DB/fullstack-c2m4-i-reviewed-master/i_reviewed/db/migrate/20160309232220_create_reviewers.rb",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture33/after/index.html",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture33/after/css/styles.css",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture38/after/css/styles.css",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture31/after/index.html",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture32/after/index.html",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/Gemfile",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/app/controllers/todo_items_controller.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/app/views/todo_items/index.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/app/views/todo_items/_form.html.erb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/app/models/todo_item.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/db/migrate/20160302020702_create_todo_items.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/config/routes.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module03/todolists/.rspec",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module2-solution/index.html",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module2-solution/css/styles.css",
+		"/C/Users/Temk/Code/2 DB/my_blog/app/models/post.rb",
+		"/C/Users/Temk/Code/3 HTML/devel/coursera-html/module2-solution/responsive-after.html",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/app/models/user.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/app/models/todo_list.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/app/models/profile.rb",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture17/specificity.html",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture18/font-size-after.html",
+		"/C/Users/Temk/Code/3 HTML/examples/Lecture21/floating-after.html",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/app/models/todo_item.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/db/seeds.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/db/migrate/20160225014707_add_user_to_todo_lists.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/db/migrate/20160225020300_create_todo_items.rb",
+		"/C/Users/Temk/Code/2 DB/graded-assignments/course02/module02/todolists/db/migrate/20160225013442_create_todo_lists_users.rb"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"                              ",
+			" \"",
+			" =>",
+			"https",
+			"-->\n",
+			"4",
+			". ",
+			" </",
+			"none",
+			"them",
+			"hover",
+			"button",
+			"butt",
+			"%;\n",
+			"90",
+			"{\n",
+			"98",
+			">\n",
+			"}\n",
+			"md",
+			"green",
+			"Person"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"  var name =\n   document.getElementById(\"name\").value;\n   var message = \"<h2>Hello \" + name + \"!</h2>\";\n\n  // document\n  //   .getElementById(\"content\")\n  //   .textContent = message;\n\n  document\n    .getElementById(\"content\")\n    .innerHTML = message;\n\n  if (name === \"student\") {\n    var title = \n      document\n        .querySelector(\"#title\")\n        .textContent;\n    title += \" & Lovin' it!\";\n    document\n        .querySelector(\"h1\")\n        .textContent = title;",
+			":",
+			"xs",
+			"User"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "users_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								711,
+								711
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Temk/Code/ne_sentinel/db/seeds.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								779,
+								779
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "nes_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Temk/Code/ne_sentinel/Gemfile",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1086,
+								1086
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "branches_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1088,
+								1088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 210.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Temk/Code/ne_sentinel/app/assets/javascripts/nes.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2379,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2291,
+								2291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Temk/Code/ne_sentinel/app/views/users/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/Temk/Code/ne_sentinel/app/views/layouts/application.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1224,
+								1225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Temk/Code/ne_sentinel/app/views/_leftpane.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1728,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1427,
+								1427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 282.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Ruby/Ruby.sublime-build",
+	"project": "sentinel.sublime-project",
+	"replace":
+	{
+		"height": 614.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

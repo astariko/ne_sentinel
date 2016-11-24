@@ -123,11 +123,15 @@ body {
     margin-bottom: 0px;
 }
 .subcontainer {
-    padding-top: 10px;
+    /*padding-top: 10px;
     padding-left: 5px;
     padding-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 0px;
+    margin-bottom: 10px;*/
+
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 10px;
+
     overflow: hidden;
     border: 1px solid black;
     min-height: 150px;
@@ -137,21 +141,4 @@ body {
 
 #load-pick{
     background-color: #e6e6ff;
-}
-
-.ne-status{
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.ne-prop{
-    /*margin-right: 10px;*/
-}
-
-.ne-check{
-    /* float: left; */
-}
-
-.load-check{
-    padding-top: 30px;
 }

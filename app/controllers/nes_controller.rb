@@ -2,8 +2,6 @@ class NesController < ApplicationController
   before_action :set_user
   before_action :set_ne  #, only: [:show, :edit, :update, :destroy]
 
-  #validates :ip, presence: true
-  #validates :name, presence: true
 	# =================================================================
   def index
 	# =================================================================
