@@ -25,15 +25,13 @@ class BranchesController < ApplicationController
   # POST /branches
   # POST /branches.json
   def create
-    @branch = Branch.new(branch_params)
+    @branch = @user.branches.new(branch_params)
 
     respond_to do |format|
       if @branch.save
-        format.html { redirect_to @branch, notice: 'Branch was successfully created.' }
-        format.json { render :show, status: :created, location: @branch }
+        format.html { redirect_to root_path, notice: 'Branch item was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @branch.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,11 +41,9 @@ class BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to @branch, notice: 'Branch was successfully updated.' }
-        format.json { render :show, status: :ok, location: @branch }
+        format.html { redirect_to root_path, notice: 'Branch item was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @branch.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,8 +53,7 @@ class BranchesController < ApplicationController
   def destroy
     @branch.destroy
     respond_to do |format|
-      format.html { redirect_to branches_url, notice: 'Branch was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to root_path, notice: 'Branch item was successfully deleted.' }
     end
   end
 

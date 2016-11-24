@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123024700) do
+ActiveRecord::Schema.define(version: 20161124014546) do
 
   create_table "branches", force: :cascade do |t|
     t.string   "name"
@@ -44,8 +44,11 @@ ActiveRecord::Schema.define(version: 20161123024700) do
     t.string   "password"
     t.string   "state"
     t.string   "privilege"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "lastbranch_id"
   end
+
+  add_index "users", ["lastbranch_id"], name: "index_users_on_lastbranch_id"
 
 end

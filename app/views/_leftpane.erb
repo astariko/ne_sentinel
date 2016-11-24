@@ -6,30 +6,24 @@
         </form>
 
         <form class="button_to" method="get" action= <%= new_user_ne_path(@user) %> >
-            <input class="btn btn-primary btn-block" type="submit" value="Add" />
+            <input class="btn btn-primary btn-block" type="submit" value="Add NE" />
         </form>
 
-        <%= submit_tag "Edit", :type => 'button', :class => "btn btn-primary btn-block", :id => 'edit-button'  %>
-
+        <%= submit_tag "Edit NE", :type => 'button', :class => "btn btn-primary btn-block", :id => 'edit-button'  %>
 
         <form class="button_to" method="delete" action="">
-            <%= submit_tag "Delete", :type => 'button', :class => "btn btn-primary btn-block", :id => 'delete-button'  %>
+            <%= submit_tag "Delete NE", :type => 'button', :class => "btn btn-primary btn-block", :id => 'delete-button'  %>
         </form>
 
 
         <form class="button_to" method="post" action="upgrade">
-            <%= submit_tag "Upgrade", :type => 'button', :class => "btn btn-primary btn-block", :id => 'upgrade-button'  %>
+            <%= submit_tag "Upgrade NE", :type => 'button', :class => "btn btn-primary btn-block", :id => 'upgrade-button'  %>
         </form>
-
 
         <form>
         <button id="button-launch" type="button" class="btn btn-primary btn-block"> Launch </button>
         </form>
 
-
-        <form class="button_to" method="get" action=<%= edit_user_path(@user) %>>
-            <%= submit_tag "Edit roots", :type => 'submit', :class => "btn btn-primary btn-block", :id => 'button-edit-profiles'  %>
-        </form>
         <!-- Edit User button -->
         <!--
         <form class="button_to" method="get" action=<%= edit_user_path(@user) %>>
@@ -38,7 +32,7 @@
         -->
 
         <form class="button_to" method="get" action= <%= new_user_branch_path(@user) %> >
-            <input class="btn btn-primary btn-block" type="submit" value="Edit Swloads" />
+            <input class="btn btn-primary btn-block" type="submit" value="Add Branch" />
         </form>
 
         <form>

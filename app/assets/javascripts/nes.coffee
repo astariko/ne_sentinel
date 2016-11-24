@@ -72,5 +72,12 @@ document.addEventListener("DOMContentLoaded",
 					window.alert("Form for ID upgrade-#{id} not found, " + error)
 
 		document.getElementById("upgrade-button").addEventListener("click", upgradeNe)
+
+
+		selectBranch = () ->
+			branch = document.getElementById("branch-pick")
+			window.alert(branch.value)
+
+		document.getElementById("branch-pick").addEventListener("change", selectBranch)
 	)
 

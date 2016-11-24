@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 		#getVersion ('BACKBONE')
 		# Create a system that has all NEs.
 		@nes = @user.nes
+		@branches = @user.branches
 		for ne in @nes
 			ne[:isonline] = isOnline ne[:ip]
 		end
