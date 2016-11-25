@@ -99,6 +99,12 @@ body {
 #notice {
     color: #000000;
 }
+@media (min-width: 992px){
+    #left-pane {
+        height: 80vh;
+    }
+}
+
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
     /* Header */
@@ -110,9 +116,6 @@ body {
         margin:  0;
     }
 
-    #left-pane {
-        height: 500px;
-    }
 }
 
 /********** Small devices only **********/

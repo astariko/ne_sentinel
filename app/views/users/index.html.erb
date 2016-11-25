@@ -84,46 +84,27 @@
     </div> <!-- NE list -->
 
 
-
+    <!-- Attempt to load Branches dynamically -->
     <div id= "profile-list" class="subcontainer col-lg-10 col-md-10">
+      <div class="container">
+        <div class="well">
+          <%= link_to "New Branch", new_user_branch_path(@user), remote: true,  class: "btn btn-primary" %>
+        </div>
 
-      <div class="profile-container col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <label class="label-radio"><input class ="profile-el" name="profile-radio" type="radio"> Falcon - 1</label> 
+        <div class="well">
+        <% @branches.each do |branch| %>
+          <tr>
+            <td><%= branch.name %></td>
+            <td><%= branch.completed %></td>
+            <td><%= branch.root %></td>
+            <td><%= link_to "Edit", edit_user_branch_path(@user, branch), remote: true, class: "btn btn-default" %></td>
+            <td><%= link_to "Delete", user_branch_delete_path(@user, branch), remote: true, class: "btn btn-danger" %></td>
+            <br>
+          </tr>
+        <% end %>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> 14-nov-16 </span>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> PASS </span>
-        </div> <!-- profile  -->
-      </div>
-      
 
-      <div class="profile-container col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <label class="label-radio"><input name="profile-radio" type="radio"> Falcon - 2</label> 
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> 16-nov-16 </span>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> FAIL </span>
-        </div> <!-- profile  -->
-      </div>
-      
-      <div class="profile-container col-lg-12 col-md-12 col-sm-12">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <label class="label-radio"><input name="profile-radio" type="radio"> Backbone - 1</label> 
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> 10-jan-16 </span>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <span> PASS </span>
-        </div> <!-- profile  -->
-      </div>
-
+      <div id="branch-modal" class="modal fade"></div>
     </div> <!-- Profile list -->
 
 </div>

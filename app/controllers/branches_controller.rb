@@ -5,12 +5,13 @@ class BranchesController < ApplicationController
   # GET /branches
   # GET /branches.json
   def index
-    @branches = Branch.all
+    #@branches = @user.branches.all
   end
 
   # GET /branches/1
   # GET /branches/1.json
   def show
+    #@branch = @user.branches.find(params[:branch_id])
   end
 
   # GET /branches/new
@@ -20,6 +21,7 @@ class BranchesController < ApplicationController
 
   # GET /branches/1/edit
   def edit
+    #@branch = @user.branches.find(params[:branch_id])
   end
 
   # POST /branches
@@ -48,6 +50,9 @@ class BranchesController < ApplicationController
     end
   end
 
+  def delete
+    #@branch = @user.branches.find(params[:branch_id])
+  end
   # DELETE /branches/1
   # DELETE /branches/1.json
   def destroy
