@@ -32,15 +32,21 @@ class NesController < ApplicationController
   # GET /nes/edit
   def edit
   end
+
+  def delete
+    #@branch = @user.branches.find(params[:branch_id])
+  end
+  
   # PATCH/PUT /nes/1
   def update
-    respond_to do |format|
-      if @ne.update(ne_params)
-        format.html { redirect_to root_path, notice: 'NE item was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
-    end
+    #respond_to do |format|
+    #  if @ne.update(ne_params)
+    #    format.html { redirect_to root_path, notice: 'NE item was successfully updated.' }
+    #  else
+    #    format.html { render :edit }
+    #  end
+    #end
+    @ne.update_attributes(ne_params)
   end
 
   # DELETE /nes/1

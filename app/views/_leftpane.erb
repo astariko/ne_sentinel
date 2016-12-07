@@ -5,11 +5,15 @@
             <input id="home" class="btn btn-primary btn-block" type="submit" value="Home" />
         </form>
 
-        <form class="button_to" method="get" action= <%= new_user_ne_path(@user) %> >
-            <input class="btn btn-primary btn-block" type="submit" value="Add NE" />
+        <!-- Example of not using Helpers -->
+        <form class="button_to" method="get" data-remote="true" action= <%= new_user_ne_path(@user) %> >
+            <input class="btn btn-primary btn-block"  type="submit" value="Add NE" />
         </form>
 
+        <!-- Example of submit tag -->
+        <!-- remember that this button is just a pointer -->
         <%= submit_tag "Edit NE", :type => 'button', :class => "btn btn-primary btn-block", :id => 'edit-button'  %>
+
 
         <form class="button_to" method="delete" action="">
             <%= submit_tag "Delete NE", :type => 'button', :class => "btn btn-primary btn-block", :id => 'delete-button'  %>
@@ -31,9 +35,8 @@
         </form>
         -->
 
-        <form class="button_to" method="get" action= <%= new_user_branch_path(@user) %> >
-            <input class="btn btn-primary btn-block" type="submit" value="Add Branch" />
-        </form>
+        <!-- Example of link_to -->
+        <%= link_to "New Branch", new_user_branch_path(@user), remote: true,  class: "btn btn-primary btn-block" %>
 
         <form>
         <button id="button-edit-systems" type="button" class="btn btn-primary btn-block"> Edit Systems </button>

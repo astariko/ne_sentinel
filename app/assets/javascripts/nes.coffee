@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded",
 			else
 				try
 					form = document.getElementById("delete-" + id.toString())
-					form[0].form[1].click()
+					form[0].form[0].click()
 				catch error
 					window.alert("Form for ID delete-#{id} not found, " + error)
 

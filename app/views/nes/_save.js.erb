@@ -1,9 +1,11 @@
 $("ul.errors").html("")
-<% if @branch.errors.any? %>
-  <% @branch.errors.full_messages.each do |message| %>
+<% if @ne.errors.any? %>
+	
+  <% @ne.errors.full_messages.each do |message| %>
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
 
-  $("#branch-modal").modal("hide")
+
+  $("#ne-modal").modal("hide")
 <% end %>

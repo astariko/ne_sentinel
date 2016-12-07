@@ -38,7 +38,6 @@
 
 
     <div id= "ne-list" class="subcontainer col-lg-10 col-md-10">
-
       <!--                          NE list                              -->
       <table class="table table-bordered table-striped">
         <thead>
@@ -67,10 +66,10 @@
           <td> <%= ne[:system] %> </td>
           <td> <%= ne[:ectype] %> </td>
           <td>
-            <%= button_to "delete", user_ne_path(@user, ne), :method => :delete,
-              :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
+  
+            <%= button_to "delete", user_ne_delete_path(@user, ne), remote: true, :method => :get,  :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
 
-            <%= button_to "edit", edit_user_ne_path(@user, ne), :method => :get, 
+            <%= button_to "edit", edit_user_ne_path(@user, ne), :remote => true, :method => :get, 
               :form => {"style" => "display:none", "id" => "edit-"+ne[:id].to_s}, :data => ne[:id] %>
 
             <%= button_to "upgrade", user_ne_upgrade_path(@user, ne), :method => :post, 
@@ -79,32 +78,43 @@
         </tr>
         <% end %>
         </tbody> 
-    </table>
+      </table>
 
+      <div id="ne-modal" class="modal fade"></div>
     </div> <!-- NE list -->
 
 
     <!-- Attempt to load Branches dynamically -->
     <div id= "profile-list" class="subcontainer col-lg-10 col-md-10">
-      <div class="container">
-        <div class="well">
-          <%= link_to "New Branch", new_user_branch_path(@user), remote: true,  class: "btn btn-primary" %>
-        </div>
 
-        <div class="well">
-        <% @branches.each do |branch| %>
-          <tr>
-            <td><%= branch.name %></td>
-            <td><%= branch.completed %></td>
-            <td><%= branch.root %></td>
-            <td><%= link_to "Edit", edit_user_branch_path(@user, branch), remote: true, class: "btn btn-default" %></td>
-            <td><%= link_to "Delete", user_branch_delete_path(@user, branch), remote: true, class: "btn btn-danger" %></td>
-            <br>
-          </tr>
-        <% end %>
-        </div>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>...</th>
+              <th>...</th>
+              <th>...</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </thead>
 
-      <div id="branch-modal" class="modal fade"></div>
+          <tbody class="branch-index">
+            <% @branches.each do |branch| %>
+              <tr>
+                <td><%= branch.name %></td>
+                <td><%= branch.completed %></td>
+                <td><%= branch.root %></td>
+                <td><%= link_to "Edit", edit_user_branch_path(@user, branch), remote: true, class: "btn btn-default" %></td>
+                <td><%= link_to "Delete", user_branch_delete_path(@user, branch), remote: true, class: "btn btn-danger" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div id="branch-modal" class="modal fade"></div>
+
     </div> <!-- Profile list -->
+
+
 
 </div>
