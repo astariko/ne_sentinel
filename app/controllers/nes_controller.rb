@@ -8,8 +8,9 @@ class NesController < ApplicationController
 	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
 	
 	for ne in @nes
-		ne[:isonline] = isOnline ne[:ip]
-	end
+		#ne[:isonline] = isOnline ne[:ip]
+	  ne[:isonline] = false
+  end
   end
 
   # GET /nes/new

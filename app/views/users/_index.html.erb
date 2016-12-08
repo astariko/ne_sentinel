@@ -1,0 +1,113 @@
+<div id= "load-list" class="subcontainer col-lg-5 col-md-5">
+  <div class="col-lg-8 col-md-8 col-sm-8">
+
+    <div class="form-group">
+      <label for="branch-pick">Select branch:</label>
+      <select class="form-control" id="branch-pick">
+      <!--                          NE list                              -->
+      <% for branch in @branches %>        
+        <option><%=branch.name%></option>
+      <% end %>
+      </select>
+
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <span> Sanity is clean </span>
+    </div>
+  </div>
+</div> <!-- load-list -->
+<div id= "profile-list" class="subcontainer col-lg-5 col-md-5">
+  <div class="col-lg-8 col-md-8 col-sm-8">
+
+     <div class="form-group">
+      <label for="profile-pick">Select profile:</label>
+      <select class="form-control" id="load-pick">
+        <option>Encryption Overnight</option>
+        <option>Alarm Check</option>
+        <option>PM Check</option>
+      </select>
+      </div>
+
+  </div>
+</div> <!-- load-list -->
+
+
+<div id= "ne-list" class="subcontainer col-lg-10 col-md-10">
+  <!--                          NE list                              -->
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>
+          <input id= "ne-check-all" type="checkbox" />
+        </th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Load</th>
+        <th>System</th>
+        <th>ECType</th>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+
+    <tbody class="ne-index">
+    <% for ne in @nes %>
+    <tr>
+      <td>
+        <span> <input class="ne-check" type="checkbox" value=<%= ne[:id] %> > </span>
+      </td>
+      <td> <%= ne[:name] %> </td>
+      <td> <%= ne_status ne %> </td>
+      <td> <%= ne[:version] %> </td>
+      <td> <%= ne[:system] %> </td>
+      <td> <%= ne[:ectype] %> </td>
+      <td>
+
+        <%= button_to "delete", user_ne_delete_path(@user, ne), remote: true, :method => :get, 
+          :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
+
+        <%= button_to "edit", edit_user_ne_path(@user, ne), :remote => true, :method => :get, 
+          :form => {"style" => "display:none", "id" => "edit-"+ne[:id].to_s}, :data => ne[:id] %>
+
+        <%= button_to "upgrade", user_ne_upgrade_path(@user, ne), :method => :post, 
+          :form => {"style" => "display:none", "id" => "upgrade-"+ne[:id].to_s}, :data => ne[:id] %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody> 
+  </table>
+
+  <div id="ne-modal" class="modal fade"></div>
+</div> <!-- NE list -->
+
+
+<!-- Attempt to load Branches dynamically -->
+<div id= "profile-list" class="subcontainer col-lg-10 col-md-10">
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>...</th>
+        <th>...</th>
+        <th>...</th>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+
+    <tbody class="branch-index">
+      <% @branches.each do |branch| %>
+        <tr>
+          <td><%= branch.name %></td>
+          <td><%= branch.completed %></td>
+          <td><%= branch.root %></td>
+          <td><%= link_to "Edit", edit_user_branch_path(@user, branch), remote: true, class: "btn btn-default" %></td>
+          <td><%= link_to "Delete", user_branch_delete_path(@user, branch), remote: true, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div id="branch-modal" class="modal fade"></div>
+</div> <!-- Profile list -->

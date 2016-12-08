@@ -6,6 +6,9 @@ $("ul.errors").html("")
   <% end %>
 <% else %>
 
+ $("#main-content").html("<%= escape_javascript(render 'index') %>")
+ $("#ne-modal").modal("hide")
 
-  $("#ne-modal").modal("hide")
+
+  
 <% end %>
