@@ -5,10 +5,5 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
-
- $("#main-content").html("<%= escape_javascript(render 'index') %>")
- $("#ne-modal").modal("hide")
-
-
-  
+  location.reload();
 <% end %>
