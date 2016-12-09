@@ -4,13 +4,13 @@ class NesController < ApplicationController
 
 	# =================================================================
   def index
-	# =================================================================
-	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
-	
-	for ne in @nes
-		#ne[:isonline] = isOnline ne[:ip]
-	  ne[:isonline] = false
-  end
+  	# =================================================================
+  	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
+  	
+  	for ne in @nes
+  		#ne[:isonline] = isOnline ne[:ip]
+  	  ne[:isonline] = false
+    end
   end
 
   # GET /nes/new
@@ -20,13 +20,9 @@ class NesController < ApplicationController
   # POST /nes
   def create
     @ne = @user.nes.new(ne_params)
-
+    @ne.save
     respond_to do |format|
-      if @ne.save
-        format.html { redirect_to root_path, notice: 'NE item was successfully created.' }
-      else
-        format.html { render :new }
-      end
+      format.js {flash[:notice] = "NE was created"}
     end
   end
 
@@ -40,21 +36,21 @@ class NesController < ApplicationController
   
   # PATCH/PUT /nes/1
   def update
-    #respond_to do |format|
-    #  if @ne.update(ne_params)
-    #    format.html { redirect_to root_path, notice: 'NE item was successfully updated.' }
-    #  else
-    #    format.html { render :edit }
-    #  end
-    #end
+    respond_to do |format|
+      format.js {flash[:notice] = "NE was updated"}
+    end
     @ne.update_attributes(ne_params)
   end
 
   # DELETE /nes/1
+  # NOT JS
   def destroy
     @ne.destroy
+    #respond_to do |format|
+    #  format.js {flash[:notice] = "NE was deleted"}
+    #end
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'NE item was successfully destroyed.' } # todo_items_url
+      format.html { redirect_to root_path, notice: "NE was deleted" }
     end
   end
 	# =================================================================

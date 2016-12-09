@@ -4,6 +4,5 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
-
-  $("#branch-modal").modal("hide")
+  location.reload();
 <% end %>

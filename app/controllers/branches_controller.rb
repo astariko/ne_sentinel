@@ -28,26 +28,18 @@ class BranchesController < ApplicationController
   # POST /branches.json
   def create
     @branch = @user.branches.new(branch_params)
-
+    @branch.save
     respond_to do |format|
-      if @branch.save
-        format.html { redirect_to root_path, notice: 'Branch item was successfully created.' }
-      else
-        format.html { render :new }
-      end
+      format.js {flash[:notice] = "Branch was created"}
     end
   end
 
   # PATCH/PUT /branches/1
   # PATCH/PUT /branches/1.json
   def update
-    #respond_to do |format|
-    #  if @branch.update(branch_params)
-    #    format.html { redirect_to root_path, notice: 'Branch item was successfully updated.' }
-    #  else
-    #    format.html { render :edit }
-    #  end
-    #end
+    respond_to do |format|
+      format.js {flash[:notice] = "Branch was updated"}
+    end
     @branch.update_attributes(branch_params)
   end
 

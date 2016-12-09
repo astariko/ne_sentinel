@@ -1,33 +1,30 @@
-<div class="modal-dialog">
-  <div class="modal-content">
-    <%= form_for [@user, @ne], remote: true, html: { style: "display:inline;" } do |f| %>
+<%= form_for [@user, @ne], remote: true, html: { style: "display:inline;" } do |f| %>
 
-      <div class="modal-body">
-        <ul class="errors"></ul>
+  <div class="modal-body">
+    <ul class="errors"></ul>
 
-        <div class="form-group">
-          <%= f.label :name %><br>
-          <%= f.text_field :name %>
-        </div>
-        <div class="form-group">
-          <%= f.label :ip %><br>
-          <%= f.text_field :ip %>
-        </div>
-        <div class="form-group">
-          <%= f.label :system %><br>
-          <%= f.text_field :system %>
-        </div>
-        <div class="form-group">
-          <%= f.label :ectype %><br>
-          <%= f.select(:ectype, options_for_select(['EC', 'ECX', 'ARMADA', 'PSS4', 'ECE']) ) %>
-        </div>
+    <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :ip %><br>
+      <%= f.text_field :ip %>
+    </div>
+    <div class="form-group">
+      <%= f.label :system %><br>
+      <%= f.text_field :system %>
+    </div>
+    <div class="form-group">
+      <%= f.label :ectype %><br>
+      <%= f.select(:ectype, options_for_select(['EC', 'ECX', 'ARMADA', 'PSS4', 'ECE']) ) %>
+    </div>
 
-        <div class="modal-footer">
-          <%= f.submit class: "btn btn-primary" %>
-          <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
-        </div>
-      </div>
-      
-    <% end %>
+    <div class="modal-footer">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+    </div>
   </div>
-</div>
+  
+<% end %>
+
