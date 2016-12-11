@@ -20,6 +20,8 @@ class NesController < ApplicationController
   # POST /nes
   def create
     @ne = @user.nes.new(ne_params)
+    @ne.branch_id = getBranchByName(@ne.branch_name).id
+
     @ne.save
     respond_to do |format|
       format.js {flash[:notice] = "NE was created"}
@@ -36,10 +38,18 @@ class NesController < ApplicationController
   
   # PATCH/PUT /nes/1
   def update
+    # Update NE record with branch_id reference
+    branch_id = getBranchByName(ne_params[:branch_name]).id
+    branch_param = {}
+    if branch_id != nil
+      branch_param = {branch_id: branch_id}
+    end
+
     respond_to do |format|
       format.js {flash[:notice] = "NE was updated"}
     end
     @ne.update_attributes(ne_params)
+    @ne.update_attributes(branch_param)
   end
 
   # DELETE /nes/1
@@ -53,6 +63,9 @@ class NesController < ApplicationController
       format.html { redirect_to root_path, notice: "NE was deleted" }
     end
   end
+
+  #==================================================================================================================================================================================
+
 	# =================================================================
 	def getVersion (system)
 	# =================================================================
@@ -92,6 +105,13 @@ class NesController < ApplicationController
 		return false
 	end
 
+  # =================================================================
+  def getBranchByName(name)
+  # =================================================================
+    return @user.branches.find_by(name: name)
+  end
+
+  #==================================================================================================================================================================================
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -108,6 +128,7 @@ class NesController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def ne_params
-      params.require(:ne).permit(:name, :ip, :ectype, :system)
+      params.require(:ne).permit(:name, :ip, :ectype, :system, :branch_name)
     end
+
 end

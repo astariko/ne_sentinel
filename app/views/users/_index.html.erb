@@ -1,38 +1,4 @@
-<div id= "load-list" class="subcontainer col-lg-5 col-md-5">
-  <div class="col-lg-8 col-md-8 col-sm-8">
-
-    <div class="form-group">
-      <label for="branch-pick">Select branch:</label>
-      <select class="form-control" id="branch-pick">
-      <!--                          NE list                              -->
-      <% for branch in @branches %>        
-        <option><%=branch.name%></option>
-      <% end %>
-      </select>
-
-
-    </div>
-
-    <div class="col-lg-6 col-md-6 col-sm-6">
-      <span> Sanity is clean </span>
-    </div>
-  </div>
-</div> <!-- load-list -->
-<div id= "profile-list" class="subcontainer col-lg-5 col-md-5">
-  <div class="col-lg-8 col-md-8 col-sm-8">
-
-     <div class="form-group">
-      <label for="profile-pick">Select profile:</label>
-      <select class="form-control" id="load-pick">
-        <option>Encryption Overnight</option>
-        <option>Alarm Check</option>
-        <option>PM Check</option>
-      </select>
-      </div>
-
-  </div>
-</div> <!-- load-list -->
-
+<p id="notice"><%= notice %></p>
 
 <div id= "ne-list" class="subcontainer col-lg-10 col-md-10">
   <!--                          NE list                              -->
@@ -47,7 +13,6 @@
         <th>Load</th>
         <th>System</th>
         <th>ECType</th>
-        <td>&nbsp;</td>
       </tr>
     </thead>
 
@@ -61,9 +26,9 @@
       <td> <%= ne_status ne %> </td>
       <td> <%= ne[:version] %> </td>
       <td> <%= ne[:system] %> </td>
-      <td> <%= ne[:ectype] %> </td>
-      <td>
-
+      <td> <%= ne[:ectype] %> 
+      
+        <!-- These buttons lay within ECTYPE cell not to create their own -->
         <%= button_to "delete", user_ne_delete_path(@user, ne), remote: true, :method => :get, 
           :form => {"style" => "display:none", "id" => "delete-"+ne[:id].to_s}, :data => ne[:id] %>
 
@@ -74,6 +39,7 @@
           :form => {"style" => "display:none", "id" => "upgrade-"+ne[:id].to_s}, :data => ne[:id] %>
       </td>
     </tr>
+
     <% end %>
     </tbody> 
   </table>
@@ -88,22 +54,32 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>...</th>
-        <th>...</th>
-        <th>...</th>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <th>
+          <input id= "branch-check-all" type="checkbox" />
+        </th>
+        <th>Name</th>
+        <th>Released?</th>
+        <th>Root</th>
+        <!-- <td>&nbsp;</td> -->
       </tr>
     </thead>
 
     <tbody class="branch-index">
       <% @branches.each do |branch| %>
         <tr>
+          <td>
+          <span> <input class="branch-check" type="checkbox" value=<%= branch[:id] %> > </span>
+          </td>
           <td><%= branch.name %></td>
           <td><%= branch.completed %></td>
-          <td><%= branch.root %></td>
-          <td><%= link_to "Edit", edit_user_branch_path(@user, branch), remote: true, class: "btn btn-default" %></td>
-          <td><%= link_to "Delete", user_branch_delete_path(@user, branch), remote: true, class: "btn btn-danger" %></td>
+          <td><%= branch.root %>
+            <!-- These buttons lay within ECTYPE cell not to create their own -->
+            <%= button_to "delete", user_branch_delete_path(@user, branch), remote: true, :method => :get, 
+              :form => {"style" => "display:none", "id" => "delete-"+branch[:id].to_s}, :data => branch[:id] %>
+
+            <%= button_to "edit", edit_user_branch_path(@user, branch), :remote => true, :method => :get, 
+              :form => {"style" => "display:none", "id" => "edit-"+branch[:id].to_s}, :data => branch[:id] %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -111,3 +87,4 @@
 
   <div id="branch-modal" class="modal fade"></div>
 </div> <!-- Profile list -->
+

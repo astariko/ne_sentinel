@@ -36,10 +36,14 @@
         -->
 
         <!-- Example of link_to -->
-        <%= link_to "New Branch", new_user_branch_path(@user), remote: true,  class: "btn btn-primary btn-block" %>
-
         <form>
-        <button id="button-edit-systems" type="button" class="btn btn-primary btn-block"> Edit Systems </button>
+            <%= link_to "New Branch", new_user_branch_path(@user), remote: true,  class: "btn btn-primary btn-block" %>
+        </form>
+        <form>
+            <%= submit_tag "Edit Branch", :type => 'button', :class => "btn btn-primary btn-block", :id => 'edit-branch'  %>
+        </form>
+        <form>
+            <%= submit_tag "Delete Branch", :type => 'button', :class => "btn btn-primary btn-block", :id => 'delete-branch'  %>
         </form>
       </div>
     </div>

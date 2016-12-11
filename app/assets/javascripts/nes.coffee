@@ -17,16 +17,19 @@ document.addEventListener("DOMContentLoaded",
 
 		editNe = () ->
 			checks = document.getElementsByClassName("ne-check")
+
 			count = 0
 			id = ""
 			for check in checks
 				if check.checked
 					count += 1
 					id = check.value
+					checked_item = check
 			if count != 1
 				window.alert("Please, select exactly one NE before clicking edit")
 			else
 				try
+					checked_item.checked = false
 					form = document.getElementById("edit-" + id.toString())
 					form[0].click()
 				catch error
@@ -43,10 +46,12 @@ document.addEventListener("DOMContentLoaded",
 				if check.checked
 					count += 1
 					id = check.value
+					checked_item = check
 			if count != 1
 				window.alert("Please, select exactly one NE before clicking delete")
 			else
 				try
+					checked_item.checked = false
 					form = document.getElementById("delete-" + id.toString())
 					form[0].form[0].click()
 				catch error
@@ -62,10 +67,12 @@ document.addEventListener("DOMContentLoaded",
 				if check.checked
 					count += 1
 					id = check.value
+					checked_item = check
 			if count != 1
 				window.alert("Please, select exactly one NE before clicking upgrade")
 			else
 				try
+					checked_item.checked = false
 					form = document.getElementById("upgrade-" + id.toString())
 					form[0].click()
 				catch error
@@ -73,11 +80,5 @@ document.addEventListener("DOMContentLoaded",
 
 		document.getElementById("upgrade-button").addEventListener("click", upgradeNe)
 
-
-		selectBranch = () ->
-			branch = document.getElementById("branch-pick")
-			window.alert(branch.value)
-
-		document.getElementById("branch-pick").addEventListener("change", selectBranch)
 	)
 

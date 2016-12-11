@@ -6,4 +6,6 @@ class Ne < ActiveRecord::Base
 
   	validates :name, presence: true, :uniqueness => true
   	validates :system, presence: true
+  	validates :branch_name, presence: true
+  	validates :ectype, presence: true
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124014546) do
+ActiveRecord::Schema.define(version: 20161209040427) do
 
   create_table "branches", force: :cascade do |t|
     t.string   "name"
@@ -29,14 +29,17 @@ ActiveRecord::Schema.define(version: 20161124014546) do
     t.string   "name"
     t.string   "ip"
     t.string   "version"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "ectype"
     t.integer  "user_id"
     t.boolean  "isonline"
     t.text     "system"
+    t.integer  "branch_id"
+    t.text     "branch_name"
   end
 
+  add_index "nes", ["branch_id"], name: "index_nes_on_branch_id"
   add_index "nes", ["user_id"], name: "index_nes_on_user_id"
 
   create_table "users", force: :cascade do |t|

@@ -15,9 +15,35 @@
       <%= f.label :system %><br>
       <%= f.text_field :system %>
     </div>
+    
     <div class="form-group">
-      <%= f.label :ectype %><br>
-      <%= f.select(:ectype, options_for_select(['EC', 'ECX', 'ARMADA', 'PSS4', 'ECE']) ) %>
+      <label for="ectype_name">Select EC type:</label>
+      <br>
+      <select  id="ectype_name" name="ne[ectype]">
+      <!--                          NE list                              -->
+      <% for ectype in @user.ectypes %>
+        <% if @ne.ectype != ectype %>     
+          <option><%=ectype%></option>
+        <% else %>
+          <option selected><%=ectype%></option>
+        <% end %>
+      <% end %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="branch_name">Select branch:</label>
+      <br>
+      <select  id="branch_name" name="ne[branch_name]">
+      <!--                          NE list                              -->
+      <% for branch in @user.branches %>
+        <% if @ne.branch_name != branch.name %>     
+          <option><%=branch.name%></option>
+        <% else %>
+          <option selected><%=branch.name%></option>
+        <% end %>
+      <% end %>
+      </select>
     </div>
 
     <div class="modal-footer">
