@@ -13,10 +13,6 @@ class Ne < ActiveRecord::Base
 	def isOnline ()
 	# =================================================================
 		check = Net::Ping::External.new(self.ip.to_s)
-    	if check.ping?
-    		return "Online"
-    	else
-    		return "Offline"
-    	end
+    	return check.ping?
 	end
 end

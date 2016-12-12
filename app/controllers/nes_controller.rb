@@ -13,6 +13,7 @@ class NesController < ApplicationController
     #end
   end
 
+  #updating this field no more than once per day
   def ping
     #respond_to do |format|
       #render json: @your_return_object 
@@ -21,7 +22,20 @@ class NesController < ApplicationController
     #end 
     #render :nothing => true
     #render :text => "online"
-    data = {:id => @ne[:id], :status => @ne.isOnline()}
+    time =  (Time.now - @ne[:updated_at]).seconds / 3600 # hours
+    if time > 24
+      @ne[:isonline] = @ne.isOnline()
+      @ne.update_attributes({isonline: @ne[:isonline]})
+    end
+    # modifying True = Online
+    if @ne[:isonline]
+      wording = "Online"
+    else
+      wording = "Out of reach"
+    end
+
+    data = {:id => @ne[:id], :status => wording}
+    #data = {:id => @ne[:id], :status => time}
     render json: data
   end
 
