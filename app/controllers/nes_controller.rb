@@ -7,10 +7,22 @@ class NesController < ApplicationController
   	# =================================================================
   	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
   	
-  	for ne in @nes
+  	#for ne in @nes
   		#ne[:isonline] = isOnline ne[:ip]
-  	  ne[:isonline] = false
-    end
+  	  #ne[:isonline] = false
+    #end
+  end
+
+  def ping
+    #respond_to do |format|
+      #render json: @your_return_object 
+      #obj = {:online => "true"}.to_json
+      #format.json {obj}
+    #end 
+    #render :nothing => true
+    #render :text => "online"
+    data = {:id => @ne[:id], :status => @ne.isOnline()}
+    render json: data
   end
 
   # GET /nes/new
@@ -91,19 +103,6 @@ class NesController < ApplicationController
 		end
 	end
 
-	# =================================================================
-	def isOnline (ip)
-	# =================================================================
-		cmd = 'ping -c 1 ' + ip	
-		result = `#{cmd}`
-		words = result.split(' ')
-		words.each do |word|
-			#packet loss is ....
-			return false if word == '100%'
-			return true if word == '0%'
-		end
-		return false
-	end
 
   # =================================================================
   def getBranchByName(name)

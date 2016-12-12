@@ -23,7 +23,9 @@
         <span> <input class="ne-check" type="checkbox" value=<%= ne[:id] %> > </span>
       </td>
       <td> <%= ne[:name] %> </td>
-      <td> <%= ne_status ne %> </td>
+      <td> 
+        <div class="ne-status" id="ne-status-<%=ne[:id]%>" data-path="<%= user_ne_ping_path(@user, ne) %>">in-prog</div>
+      </td>
       <td> <%= ne[:version] %> </td>
       <td> <%= ne[:system] %> </td>
       <td> <%= ne[:ectype] %> 

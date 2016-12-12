@@ -5,16 +5,17 @@ class UsersController < ApplicationController
   def index
 	# =================================================================
 
-    @site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
+    #@site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
+    @site = 'http://localhost:3000/users/9/1830'
     @looking_for = "grape-"
     #findLatestLoad
 		#getVersion ('BACKBONE')
 		# Create a system that has all NEs.
 		@nes = @user.nes
 		@branches = @user.branches
-		for ne in @nes
-			ne[:isonline] = isOnline ne[:ip]
-		end
+		#for ne in @nes
+		#	ne[:isonline] = isOnline ne[:ip]
+		#end
 
 		#render layout: "header.erb"
 		

@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
+    get '1830'
     resources :nes do#, only: [:new, :create, :destroy]
       post 'upgrade'
       get 'delete'
+      get 'ping'
     end
 
     resources :branches do

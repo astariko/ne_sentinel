@@ -80,5 +80,30 @@ document.addEventListener("DOMContentLoaded",
 
 		document.getElementById("upgrade-button").addEventListener("click", upgradeNe)
 
+		#online?
+		checkNesOnlineStatus = () ->
+			ne_statuses = document.getElementsByClassName("ne-status")
+			for status in ne_statuses
+				checkOne(status.dataset.path)
+
+		updateNeStatus = (data) ->
+			ne_status = document.getElementById("ne-status-"+data["id"])
+			ne_status.innerHTML = data["status"]
+
+		checkOne = (path) ->
+			$.ajax path,
+			    type: 'GET'
+			    dataType: 'json'
+			    error: (jqXHR, textStatus, errorThrown) ->
+			    	#console.log('error')
+			        return 'error'
+			    success: (data, textStatus, jqXHR) ->
+			    	#console.log('win')
+			        updateNeStatus(data)
+
+		checkNesOnlineStatus()
+
+
+
 	)
 
