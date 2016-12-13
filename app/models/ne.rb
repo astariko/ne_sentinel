@@ -12,7 +12,9 @@ class Ne < ActiveRecord::Base
   	# =================================================================
 	def isOnline ()
 	# =================================================================
-		check = Net::Ping::External.new(self.ip.to_s)
-    	return check.ping?
+		#check = Net::Ping::External.new(self.ip.to_s)
+    	#return check.ping?
+
+    	#return PingerJob.new.perform(self.ip.to_s)
 	end
 end

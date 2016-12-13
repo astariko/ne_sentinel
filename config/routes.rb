@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :nes do#, only: [:new, :create, :destroy]
       post 'upgrade'
       get 'delete'
-      get 'ping'
+      get 'ping'#, to: 'nes#ping'
+      get 'ping_result'
     end
 
     resources :branches do
