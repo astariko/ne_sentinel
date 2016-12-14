@@ -92,10 +92,8 @@ document.addEventListener("DOMContentLoaded",
 			    type: 'GET'
 			    dataType: 'json'
 			    error: (jqXHR, textStatus, errorThrown) ->
-			    	#console.log('error')
 			        return 'error'
 			    success: (data, textStatus, jqXHR) ->
-			    	#console.log('win')
 			    	return 'success'
 
 		getStatus = (path) ->
@@ -103,10 +101,8 @@ document.addEventListener("DOMContentLoaded",
 			    type: 'GET'
 			    dataType: 'json'
 			    error: (jqXHR, textStatus, errorThrown) ->
-			    	#console.log('error')
 			        return 'error'
 			    success: (data, textStatus, jqXHR) ->
-			    	#console.log('win')
 			        updateNeStatus(data)
 		getNeStatus = () ->
 			ne_statuses = document.getElementsByClassName("ne-status")
@@ -117,12 +113,11 @@ document.addEventListener("DOMContentLoaded",
 			ne_status = document.getElementById("ne-status-"+data["id"])
 			ne_status.innerHTML = data["status"]
 
-		issuePingToNes()
+		#issuePingToNes()
 		window.setTimeout(getNeStatus(), 5000)
 
 		# I can work on some kind of NE status refresh if I want to.
 		#window.setInterval(issuePingToNes(), 30000);
 		#window.setInterval(getNeStatus(), 10000);
-
 	)
 

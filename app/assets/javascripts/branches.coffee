@@ -59,4 +59,27 @@ document.addEventListener("DOMContentLoaded",
 					window.alert("Form for ID delete-#{id} not found, " + error)
 
 		document.getElementById("delete-branch").addEventListener("click", deleteBranch)
+
+
+		updateBranch = () ->
+			checks = document.getElementsByClassName("branch-check")
+
+			count = 0
+			id = ""
+			for check in checks
+				if check.checked
+					count += 1
+					id = check.value
+					checked_item = check
+			if count != 1
+				window.alert("Please, select exactly one Branch before clicking edit")
+			else
+				try
+					checked_item.checked = false
+					form = document.getElementById("edit-" + id.toString())
+					form[0].click()
+				catch error
+					window.alert("Form for ID edit-#{id} not found, " + error)
+
+		document.getElementById("branch-update").addEventListener("click", updateBranch)
 	)

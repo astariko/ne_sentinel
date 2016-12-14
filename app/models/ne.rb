@@ -9,12 +9,4 @@ class Ne < ActiveRecord::Base
   	validates :branch_name, presence: true
   	validates :ectype, presence: true
 
-  	# =================================================================
-	def isOnline ()
-	# =================================================================
-		#check = Net::Ping::External.new(self.ip.to_s)
-    	#return check.ping?
-
-    	#return PingerJob.new.perform(self.ip.to_s)
-	end
 end

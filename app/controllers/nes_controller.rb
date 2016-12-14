@@ -4,17 +4,33 @@ class NesController < ApplicationController
 
 	# =================================================================
   def index
-  	# =================================================================
-  	#@todo_lists = current_user.todo_lists.paginate(page: params[:page], per_page: 8)
-  	
-  	#for ne in @nes
-  		#ne[:isonline] = isOnline ne[:ip]
-  	  #ne[:isonline] = false
-    #end
   end
 
   #updating this field no more than once per ?
+  # issue ping job to run in background
   def ping
+    time =  (Time.now - @ne[:updated_at]).seconds / 60 # minutes
+    if time > 15
+      PingerJob.perform_async(@user, @ne)
+      VersionJob.perform_async(@user, @ne)
+    end
+    # else old value is left
+    render :nothing
+  end
+
+  # page requesting ping results
+  def ping_result
+    if @ne[:isonline]
+      wording = "Online"
+    else
+      wording = "Out of reach"
+    end
+    data = {:id => @ne[:id], :status => wording}
+    render json: data
+  end
+
+  #issue version update to run in background
+  def version
     time =  (Time.now - @ne[:updated_at]).seconds / 60 # minutes
     if time > 15
       PingerJob.perform_async(@user, @ne)
@@ -23,7 +39,7 @@ class NesController < ApplicationController
     render :nothing
   end
 
-  def ping_result
+  def version_result
     if @ne[:isonline]
       wording = "Online"
     else

@@ -1,24 +1,23 @@
 class UsersController < ApplicationController
-  # You need this.
   before_action :set_user
 	# =================================================================
   def index
 	# =================================================================
-
     #@site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
     @site = 'http://localhost:3000/users/9/1830'
     @looking_for = "grape-"
-    #findLatestLoad
-		#getVersion ('BACKBONE')
-		# Create a system that has all NEs.
 		@nes = @user.nes
 		@branches = @user.branches
-		#for ne in @nes
-		#	ne[:isonline] = isOnline ne[:ip]
-		#end
-
-		#render layout: "header.erb"
-		
+    #Q1. do I need to reping NEs?
+    #Q2. do I need to refresh the load?
+    for ne in @nes
+      time =  (Time.now - ne[:updated_at]).seconds / 60 # minutes
+      if time > 15
+        PingerJob.perform_async(@user, ne)
+        VersionJob.perform_async(@user, ne)
+      end
+    end
+    #Q3. Do I need to reload  release latest load?
   end
 
   # GET /user/edit
@@ -40,15 +39,9 @@ class UsersController < ApplicationController
 		@dir = '/home/astariko/APT/aptDev/testcase/ot/encryption/KMT/'
 		@command = 'cd ' +@dir + '; python ne_handshake.py --system ' 
 							+system + ' --config ne_handshake.cfg'
-
-		# clear file manually ...
-		`#{@command}`
-
 		# sort of run checks in background whether it was finished... << That is interesting.
 		# OR! run tests on all systems at once.  Each one can write to system_name.txt
-			
 	end
-
 
 	# =================================================================
 	def isOnline (ip)
@@ -64,18 +57,12 @@ class UsersController < ApplicationController
 		return false
 	end
 
-
 	# =================================================================
   def findLatestLoad
 	# =================================================================
-    #require 'open-uri'
-    #require 'nokogiri'
     source = open(@site){|f|f.read}
-
-
     doc = Nokogiri::HTML::Document.parse(source)
     lines = doc.css("td").css("p[class='line862'], p[class='line891']").map(&:text)
-
     results = Array.new
 
     i = 0
@@ -107,10 +94,8 @@ class UsersController < ApplicationController
         break
       end
     }
-
     @latest_load = res
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -121,9 +106,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:rootec, :rootecx, :rootece, :rootarmada, :rootpss4)
     end
-    # Never trust parameters from the scary internet, only allow the white list through.
-    #def todo_list_params
-    #  params.require(:todo_list).permit(:list_name, :list_due_date)
-    #end
-
 end

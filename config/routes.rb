@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get 'delete'
       get 'ping'#, to: 'nes#ping'
       get 'ping_result'
+      get 'version'#, to: 'nes#ping'
+      get 'version_result'
     end
 
     resources :branches do
