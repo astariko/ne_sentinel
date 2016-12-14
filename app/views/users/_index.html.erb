@@ -61,6 +61,7 @@
         </th>
         <th>Name</th>
         <th>Released?</th>
+        <th>Latest Load</th>
         <th>Root</th>
         <!-- <td>&nbsp;</td> -->
       </tr>
@@ -74,6 +75,7 @@
           </td>
           <td><%= branch.name %></td>
           <td><%= branch.completed %></td>
+          <td><div class="branch-latest-load" data-path="<%= user_branch_update_path(@user, branch)%>">in-progress</div></td>
           <td><%= branch.root %>
             <!-- These buttons lay within ECTYPE cell not to create their own -->
             <%= button_to "delete", user_branch_delete_path(@user, branch), remote: true, :method => :get, 

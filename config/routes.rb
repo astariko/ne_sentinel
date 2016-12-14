@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
     resources :branches do
       get 'delete'
+      get 'update'
+      get 'update_result'
     end
   end
 

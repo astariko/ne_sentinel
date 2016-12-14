@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   def index
 	# =================================================================
     #@site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
-    @site = 'http://localhost:3000/users/9/1830'
-    @looking_for = "grape-"
 		@nes = @user.nes
 		@branches = @user.branches
     #Q1. do I need to reping NEs?
@@ -17,6 +15,12 @@ class UsersController < ApplicationController
         VersionJob.perform_async(@user, ne)
       end
     end
+
+    #for branch in @branches
+    #  site = 'http://localhost:3000/users/9/1830'
+    #  looking_for = "grape-"
+    #  BranchUpdateJob.perform_async(@user, branch, site, looking_for)
+    #end
     #Q3. Do I need to reload  release latest load?
   end
 
@@ -56,46 +60,6 @@ class UsersController < ApplicationController
 		end
 		return false
 	end
-
-	# =================================================================
-  def findLatestLoad
-	# =================================================================
-    source = open(@site){|f|f.read}
-    doc = Nokogiri::HTML::Document.parse(source)
-    lines = doc.css("td").css("p[class='line862'], p[class='line891']").map(&:text)
-    results = Array.new
-
-    i = 0
-    load_data = nil
-    lines.each { |line|
-      if line.strip.start_with?(@looking_for)
-        if load_data
-          results << load_data
-        end
-        i = 0
-        load_data = { :label => line.strip, :data => ''}
-  
-      elsif load_data
-        case i
-	  when  0 then load_data[:swp] = line.strip
-	  when  1 then load_data[:date] = line.strip
-	  #when  2 then load_data[:status] = line.strip
-	  else load_data[:data] << line.strip
-        end
-        i += 1
-      end
-    }
-
-    # At this point results contain a list of loads. Let's find most recent one, that did not fail.
-    res = nil
-    results.each{ |result|
-      if result[:data].include? "Passed"
-        res = result
-        break
-      end
-    }
-    @latest_load = res
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
