@@ -8,13 +8,19 @@ class UsersController < ApplicationController
 		@branches = @user.branches
     #Q1. do I need to reping NEs?
     #Q2. do I need to refresh the load?
+    initialize_stack()
     for ne in @nes
+      params = {user: @user,  ne: ne }
       time =  (Time.now - ne[:updated_at]).seconds / 60 # minutes
-      if time > 15
-        PingerJob.perform_async(@user, ne)
-        VersionJob.perform_async(@user, ne)
-      end
-    end
+      #if time > 1
+
+      add_job('ping', params)
+      #add_job('version', params)
+        #PingerJob.perform_async(@user, ne)
+        #VersionJob.perform_async(@user, ne)
+      #end
+
+  end
 
     #for branch in @branches
     #  site = 'http://localhost:3000/users/9/1830'

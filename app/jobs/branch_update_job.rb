@@ -4,6 +4,7 @@ class BranchUpdateJob
   def perform(user, branch, site, looking_for)
   	#out, err, status = Open3.capture3('C:\\Python27\\python.exe C:\\Users\\Temk\\Code\\ne_sentinel_supp\\ne_handshake.py')
    	#match = /(version:.*)/.match(out).to_s
+    
 
    	#version =match.split(':')[1]
    	#ne.update_attributes({version: version})

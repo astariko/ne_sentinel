@@ -1,9 +1,22 @@
 class PingerJob 
   include SuckerPunch::Job
-  
-  def perform(user, ne)
-    check = Net::Ping::External.new(ne[:ip])
-   	#return check.ping?
-   	ne.update_attributes({isonline: check.ping?})
+
+
+  def perform(params)
+  	ActiveRecord::Base.connection_pool.with_connection do
+  		Job.first.update_attributes(status: "busy")
+
+	  	#sleep (10)
+	  	ne = params[:ne]
+	    check = Net::Ping::External.new(ne[:ip])
+	   	result = check.ping?
+	   	puts "pinging..." + ne[:name]
+	   	if ne[:isonline] != result
+	   		ne.update_attributes({isonline: result})
+	   	end
+
+	  	Job.first.update_attributes(status: "done")
+  	end
+
   end
 end

@@ -11,8 +11,8 @@ class NesController < ApplicationController
   def ping
     time =  (Time.now - @ne[:updated_at]).seconds / 60 # minutes
     if time > 15
-      PingerJob.perform_async(@user, @ne)
-      VersionJob.perform_async(@user, @ne)
+      #PingerJob.perform_async(@user, @ne)
+      #VersionJob.perform_async(@user, @ne)
     end
     # else old value is left
     render :nothing
