@@ -1,10 +1,10 @@
 class PingerJob 
   include SuckerPunch::Job
-
+  workers 4
 
   def perform(params)
   	ActiveRecord::Base.connection_pool.with_connection do
-  		Job.first.update_attributes(status: "busy")
+  		#Job.first.update_attributes(status: "busy")
 
 	  	#sleep (10)
 	  	ne = params[:ne]
@@ -15,7 +15,7 @@ class PingerJob
 	   		ne.update_attributes({isonline: result})
 	   	end
 
-	  	Job.first.update_attributes(status: "done")
+	  	#Job.first.update_attributes(status: "done")
   	end
 
   end

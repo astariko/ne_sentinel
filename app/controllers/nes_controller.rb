@@ -6,28 +6,6 @@ class NesController < ApplicationController
   def index
   end
 
-  #updating this field no more than once per ?
-  # issue ping job to run in background
-  def ping
-    time =  (Time.now - @ne[:updated_at]).seconds / 60 # minutes
-    if time > 15
-      #PingerJob.perform_async(@user, @ne)
-      #VersionJob.perform_async(@user, @ne)
-    end
-    # else old value is left
-    render :nothing
-  end
-
-  # page requesting ping results
-  def ping_result
-    if @ne[:isonline]
-      wording = "Online"
-    else
-      wording = "Out of reach"
-    end
-    data = {:id => @ne[:id], :status => wording}
-    render json: data
-  end
 
   #issue version update to run in background
   def version

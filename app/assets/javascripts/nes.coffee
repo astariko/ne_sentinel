@@ -82,12 +82,20 @@ document.addEventListener("DOMContentLoaded",
 
 		# ----------------------------------------------------------------------------------------
 		#online?
-		issuePingToNes = () ->
-			ne_statuses = document.getElementsByClassName("ne-status")
-			for status in ne_statuses
-				issuePing(status.dataset.path)
+		getServerStatus = (path) ->
+			$.ajax path,
+			    type: 'GET'
+			    dataType: 'html'
+			    error: (jqXHR, textStatus, errorThrown) ->
+			        return 'error'
+			    success: (data, textStatus, jqXHR) ->
+			    	return 'success'
+			    	window.setInterval(getServerStatus('/check_on_server', 25000))
+			#ne_statuses = document.getElementsB
+			#	getStatus(status.dataset.path2)yClassName("ne-status")
+			#for status in ne_statuses
 
-		issuePing = (path) ->
+		checkOnStack = (path) ->
 			$.ajax path,
 			    type: 'GET'
 			    dataType: 'json'
@@ -96,25 +104,17 @@ document.addEventListener("DOMContentLoaded",
 			    success: (data, textStatus, jqXHR) ->
 			    	return 'success'
 
-		getStatus = (path) ->
-			$.ajax path,
-			    type: 'GET'
-			    dataType: 'json'
-			    error: (jqXHR, textStatus, errorThrown) ->
-			        return 'error'
-			    success: (data, textStatus, jqXHR) ->
-			        updateNeStatus(data)
-		getNeStatus = () ->
-			ne_statuses = document.getElementsByClassName("ne-status")
-			for status in ne_statuses
-				getStatus(status.dataset.path2)
+		#Page loads and then /check_on_stack executed
+		#setTimeout(checkOnStack('/check_on_stack'), 500)
+		setTimeout ( ->
+		  checkOnStack '/check_on_stack'
+		), 500
 
-		updateNeStatus = (data) ->
-			ne_status = document.getElementById("ne-status-"+data["id"])
-			ne_status.innerHTML = data["status"]
-
-		#issuePingToNes()
-		window.setTimeout(getNeStatus(), 5000)
+		#once check_on_stack is completed, we ought to refresh the main page ( I think fully. but make sure taht another DB call is not called for.)
+		#setInterval(getServerStatus('/check_on_server', 30000))
+		setInterval ( ->
+		  getServerStatus '/check_on_server'
+		), 15000
 
 		# I can work on some kind of NE status refresh if I want to.
 		#window.setInterval(issuePingToNes(), 30000);

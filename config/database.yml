@@ -5,21 +5,29 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
-  pool: 50
-  timeout: 20000
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: ne_sentinel_db
+  pool: 5
+  username: root
+  password: '!1696roadm'
+  #**socket: /opt/local/var/run/mysql5/mysqld.sock**
+  socket: C:\Program Files\MySQL\MySQL Server 5.7\mysql.sock
+  #pool: 30
+  #timeout: 60000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  #database: db/test.sqlite3
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  #database: db/production.sqlite3

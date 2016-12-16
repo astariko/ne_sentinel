@@ -4,21 +4,24 @@ class UsersController < ApplicationController
   def index
 	# =================================================================
     #@site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
+    Job.first.update_attributes(status: "initializing")
 		@nes = @user.nes
 		@branches = @user.branches
     #Q1. do I need to reping NEs?
     #Q2. do I need to refresh the load?
     initialize_stack()
+    job_updated_at = Job.first['updated_at']
+
     for ne in @nes
       params = {user: @user,  ne: ne }
-      time =  (Time.now - ne[:updated_at]).seconds / 60 # minutes
-      #if time > 1
+      time =  (Time.now - job_updated_at).seconds / 60 # minutes
+      if time > 10
 
-      add_job('ping', params)
+        add_job('ping', params)
       #add_job('version', params)
         #PingerJob.perform_async(@user, ne)
         #VersionJob.perform_async(@user, ne)
-      #end
+      end
 
   end
 
