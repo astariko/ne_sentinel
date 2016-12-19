@@ -7,19 +7,18 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#index'
-  get '/check_on_stack', to: 'application#check_on_stack', as: :check_on_stack
-  # did stack resolve ?
-  get '/check_on_server', to: 'application#check_on_server', as: :check_on_server
-
+  
   resources :users do
     get '1830'
+    # did stack resolve ?
+    get 'check_on_server', to: 'users#check_on_server', as: :check_on_server
 
     resources :nes do#, only: [:new, :create, :destroy]
       post 'upgrade'
       get 'delete'
-      get 'ping'#, to: 'nes#ping'
+      #et 'ping'#, to: 'nes#ping'
       get 'ping_result'
-      get 'version'#, to: 'nes#ping'
+      #get 'version'#, to: 'nes#ping'
       get 'version_result'
     end
 

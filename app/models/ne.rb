@@ -9,4 +9,5 @@ class Ne < ActiveRecord::Base
   	validates :branch_name, presence: true
   	validates :ectype, presence: true
 
+  	JOB_STATUS = { :done => "done", :start => "in-progress"}
 end

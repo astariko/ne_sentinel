@@ -82,42 +82,41 @@ document.addEventListener("DOMContentLoaded",
 
 		# ----------------------------------------------------------------------------------------
 		#online?
-		getServerStatus = (path) ->
-			$.ajax path,
-			    type: 'GET'
-			    dataType: 'html'
-			    error: (jqXHR, textStatus, errorThrown) ->
-			        return 'error'
-			    success: (data, textStatus, jqXHR) ->
-			    	return 'success'
-			    	window.setInterval(getServerStatus('/check_on_server', 25000))
-			#ne_statuses = document.getElementsB
-			#	getStatus(status.dataset.path2)yClassName("ne-status")
-			#for status in ne_statuses
-
-		checkOnStack = (path) ->
+		#1. Is server info up-to date ?
+		checkOnServer = (path) ->
 			$.ajax path,
 			    type: 'GET'
 			    dataType: 'json'
 			    error: (jqXHR, textStatus, errorThrown) ->
-			        return 'error'
+			    	#errorThrown = 'Service Unavailable' textStatus = 'error'
+			    	setTimeout ( -> checkOnServer(path) ) , 3000
 			    success: (data, textStatus, jqXHR) ->
-			    	return 'success'
+			    	updateNeStatus()
+		
+		checkOnServerPath = document.getElementById("check-on-server").dataset.path
+		setTimeout ->
+		  checkOnServer checkOnServerPath
+		, 500
 
-		#Page loads and then /check_on_stack executed
-		#setTimeout(checkOnStack('/check_on_stack'), 500)
-		setTimeout ( ->
-		  checkOnStack '/check_on_stack'
-		), 500
+		#2. Update the elements!
+		updateNeStatus = () ->
+			statuses = document.getElementsByClassName("ne-status")
+			for status in statuses
+				updateStatus(status.dataset.path)
+				#updateStatus returns {"readyState" item}
+				
 
-		#once check_on_stack is completed, we ought to refresh the main page ( I think fully. but make sure taht another DB call is not called for.)
-		#setInterval(getServerStatus('/check_on_server', 30000))
-		setInterval ( ->
-		  getServerStatus '/check_on_server'
-		), 15000
+		updateStatus = (path) ->
+			$.ajax path,
+			    type: 'GET'
+			    dataType: 'json'
+			    error: (jqXHR, textStatus, errorThrown) ->
+			        alert(errorThrown)
+			    success: (data, textStatus, jqXHR) ->
+			    	#data = {"id":3,"ne_status":"Out of reach"}
+			    	#alert(JSON.stringify(data))
+			    	status = document.getElementById("ne-status-"+data.id)
+			    	status.innerHTML = data.ne_status
 
-		# I can work on some kind of NE status refresh if I want to.
-		#window.setInterval(issuePingToNes(), 30000);
-		#window.setInterval(getNeStatus(), 10000);
 	)
 

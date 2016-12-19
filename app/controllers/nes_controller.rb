@@ -6,6 +6,18 @@ class NesController < ApplicationController
   def index
   end
 
+  def ping_result
+    #needs an actual refresh
+    @ne = @user.nes.find(@ne[:id])
+    if @ne[:isonline]
+      wording = "Online"
+    else
+      wording = "Out of reach"
+    end
+    data = {:id => @ne[:id], :ne_status => wording}
+    #data = {:id => @ne[:id], :status => time}
+    render json: data, status: :ok
+  end
 
   #issue version update to run in background
   def version
@@ -36,10 +48,14 @@ class NesController < ApplicationController
   def create
     @ne = @user.nes.new(ne_params)
     @ne.branch_id = getBranchByName(@ne.branch_name).id
+    @ne.job_status = Ne::JOB_STATUS[:start]
 
     @ne.save
     respond_to do |format|
       format.js {flash[:notice] = "NE was created"}
+      #params = {user: @user,  ne: @ne }
+      #redirect_to your_controller_action_url and return
+      #add_job('ping', params)
     end
   end
 

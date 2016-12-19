@@ -11,54 +11,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215024931) do
+ActiveRecord::Schema.define(version: 20161219005638) do
 
   create_table "branches", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        limit: 255
     t.boolean  "completed"
-    t.string   "root"
-    t.string   "http"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.text     "latest_load"
+    t.string   "root",        limit: 255
+    t.string   "http",        limit: 255
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "latest_load", limit: 65535
   end
 
-  add_index "branches", ["user_id"], name: "index_branches_on_user_id"
+  add_index "branches", ["user_id"], name: "index_branches_on_user_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "status",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "nes", force: :cascade do |t|
-    t.string   "name"
-    t.string   "ip"
-    t.string   "version"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.text     "ectype"
-    t.integer  "user_id"
+    t.string   "name",        limit: 255
+    t.string   "ip",          limit: 255
+    t.string   "version",     limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "ectype",      limit: 65535
+    t.integer  "user_id",     limit: 4
     t.boolean  "isonline"
-    t.text     "system"
-    t.integer  "branch_id"
-    t.text     "branch_name"
+    t.text     "system",      limit: 65535
+    t.integer  "branch_id",   limit: 4
+    t.text     "branch_name", limit: 65535
+    t.text     "job_status",  limit: 65535
   end
 
-  add_index "nes", ["branch_id"], name: "index_nes_on_branch_id"
-  add_index "nes", ["user_id"], name: "index_nes_on_user_id"
+  add_index "nes", ["branch_id"], name: "index_nes_on_branch_id", using: :btree
+  add_index "nes", ["user_id"], name: "index_nes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "state"
-    t.string   "privilege"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "lastbranch_id"
+    t.string   "username",      limit: 255
+    t.string   "password",      limit: 255
+    t.string   "state",         limit: 255
+    t.string   "privilege",     limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "lastbranch_id", limit: 4
   end
 
-  add_index "users", ["lastbranch_id"], name: "index_users_on_lastbranch_id"
+  add_index "users", ["lastbranch_id"], name: "index_users_on_lastbranch_id", using: :btree
 
 end

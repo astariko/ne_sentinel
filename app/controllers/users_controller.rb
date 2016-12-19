@@ -1,37 +1,133 @@
 class UsersController < ApplicationController
   before_action :set_user
+  helper_method :add_job
 	# =================================================================
   def index
 	# =================================================================
     #@site = 'http://pssnfs-lx.mh.lucent.com/1830wiki/1830PSS_Fruits_G_Deliveries'
-    Job.first.update_attributes(status: "initializing")
-		@nes = @user.nes
+    @nes = @user.nes
 		@branches = @user.branches
     #Q1. do I need to reping NEs?
     #Q2. do I need to refresh the load?
     initialize_stack()
-    job_updated_at = Job.first['updated_at']
-
-    for ne in @nes
-      params = {user: @user,  ne: ne }
-      time =  (Time.now - job_updated_at).seconds / 60 # minutes
-      if time > 10
-
+    if not db_up_to_date?
+      for ne in @nes
+        params = {user: @user,  ne: ne }
+        ne.update_attributes({job_status: Ne::JOB_STATUS[:start] })
         add_job('ping', params)
-      #add_job('version', params)
-        #PingerJob.perform_async(@user, ne)
-        #VersionJob.perform_async(@user, ne)
+        #add_job('version', params)
       end
+    else
+      # if previous session ended badly > overwrite :job_status
+      for ne in @nes
+        if ne[:job_status] != Ne::JOB_STATUS[:done]
+          #ne.update_attributes({job_status: Ne::JOB_STATUS[:done] })
+          params = {user: @user,  ne: ne }
+          add_job('ping', params)
+        end
+      end
+    end
 
   end
-
-    #for branch in @branches
-    #  site = 'http://localhost:3000/users/9/1830'
-    #  looking_for = "grape-"
-    #  BranchUpdateJob.perform_async(@user, branch, site, looking_for)
-    #end
-    #Q3. Do I need to reload  release latest load?
+  #for branch in @branches
+  #  site = 'http://localhost:3000/users/9/1830'
+  #  looking_for = "grape-"
+  #  BranchUpdateJob.perform_async(@user, branch, site, looking_for)
+  #end
+  #Q3. Do I need to reload  release latest load?
+  def job_performing?
+    for ne in @nes
+      if ne[:job_status] == Ne::JOB_STATUS[:start]
+        return true
+      end
+    end
+    return false
   end
+
+  def db_up_to_date?
+    for ne in @nes
+      time =  (Time.now - ne[:updated_at]).seconds / 60 # minutes
+      #Did enough time pass?
+      if time > 10
+        return false
+      end
+    end
+    return true
+  end
+
+  def add_job(job, params)
+    #params = {user: @user,  ne: ne, job: PingerJob.perform_async }
+    #First let's show user the page. then we'll come back to the stack
+    @@stack.push([job, params])
+  end
+
+  # many jobs here.
+  def check_on_server()
+    #puts 'check_on_server()'
+    #job_status = Job.first['status']
+    #refresh
+    @nes = @user.nes
+    job_performing= job_performing?
+
+    if not job_performing and db_up_to_date?
+      render json: nil, status: :ok
+      #respond_to do |format|
+      #    format.html { redirect_to root_path }
+      #end
+    else
+      if @@stack.length() > 0
+        check_on_stack()
+        #service_unavailable
+        render json: nil, status: :service_unavailable
+      else
+        render json: nil, status: :service_unavailable
+      end
+    end
+  end
+
+  def check_on_stack()
+    #Job.first.update_attributes(status: "busy")
+    #status = Job.first[:status]
+    #if status == 'done'
+    for pair in @@stack
+      params = pair[1]
+      job = pair[0]
+      case
+      when job == 'ping'
+        PingerJob.perform_async(params)
+        #PingerJob.perform_in(@timein, params)
+      when job == 'version'
+        VersionJob.perform_async(params)
+        #VersionJob.perform_in(@timein, params)
+    end
+    end
+    initialize_stack()
+    #Job.first.update_attributes(status: "done")
+  end
+
+
+  def initialize_stack()
+    @@stack = []
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   # GET /user/edit
   def edit

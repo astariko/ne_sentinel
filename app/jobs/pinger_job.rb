@@ -14,7 +14,7 @@ class PingerJob
 	   	if ne[:isonline] != result
 	   		ne.update_attributes({isonline: result})
 	   	end
-
+	   	ne.update_attributes({job_status: Ne::JOB_STATUS[:done] })
 	  	#Job.first.update_attributes(status: "done")
   	end
 
